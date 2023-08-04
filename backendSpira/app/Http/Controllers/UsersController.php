@@ -93,4 +93,18 @@ class UsersController extends Controller
     {
         Users::where('id', $id)->delete();
     }
+
+    function indexCourses(){
+        $id = Auth::id();
+        
+        //dd(auth()->check());
+        $assign_courses = DB::table('users_courses AS uc')
+        ->select('uc.id', 'uc.id_user', 'uc.id_course', 'c.name', 'c.hourly_intensity')
+        ->join('courses AS c', 'c.id', '=', 'uc.id_course')
+        ->join('users AS u', 'u.id', '=', 'uc.id_user')
+        ->where('u.id', $id)
+        ->get();
+        return view('index-courses', ['assign_courses' => $assign_courses]);
+
+    }
 }
