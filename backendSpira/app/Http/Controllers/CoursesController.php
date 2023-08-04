@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Courses;
+use App\Models\UsersCourses;
 use Illuminate\Support\Facades\DB;
 
 
@@ -53,11 +54,16 @@ class CoursesController extends Controller
         $course->hourly_intensity = request('hourly_intensity');
 
         $course->save();
-        return $course;
+        return redirect()->route('courses.list');
+
     }
 
-    function delete($id) {
+    function delateCourse($id) {
         Courses::where('id', $id)->delete();
+    }
+
+    function deleteAssignCourse($id) {
+        UsersCourses::where('id', $id)->delete();
     }
 
 

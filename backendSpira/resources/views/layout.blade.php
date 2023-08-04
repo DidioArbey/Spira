@@ -9,9 +9,9 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"> <!-- Favicon-->
     <title>{{ config('app.name') }} - @yield('title')</title>
 
-    <!-- <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/menu.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/floating-wpp.css') }}" />
@@ -27,6 +27,7 @@
     <script src="{{ asset('assets/bundles/vendorscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery/jquery-v3.3.1.min.js') }}"></script>
+    <script src="{{asset('assets/js/pages/ui/sweetalert.js')}}"></script>
 
     @stack('after-scripts')
     @if (trim($__env->yieldContent('page-script')))

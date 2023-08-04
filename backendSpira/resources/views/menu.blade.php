@@ -2,13 +2,12 @@
 
 <nav>
 	<a href="#">Home</a>
-	<a href="#">About</a>
+	<a href="{{ route('users.list') }}">Usuarios</a>
 	<a href="{{ route('courses.list') }}">Cursos</a>
 	<a href="#">Portefolio</a>
 	<a href="#">Contact</a>
 	<div class="animation start-home"></div>
 </nav>
 
-<p>
-  By <span>Patak</span>
-</p>
+
+<script src="{{asset('assets/js/pages/ui/sweetalert.js')}}"></script>
