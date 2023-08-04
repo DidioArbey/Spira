@@ -60,7 +60,7 @@
                     <form id="form-course" class="form-horizontal" enctype="multipart/form-data">
                         @csrf
                         <div class="row clearfix">
-                            <input name="type_course_id" value="1" type="hidden", id="type_course_id">
+                            {{-- <input name="type_course_id" value="1" type="hidden", id="type_course_id"> --}}
                             <div class="col-lg-2 col-md-2 col-sm-4 form-control-label">
                                 <label for="name">Nombre</label>
                             </div>
@@ -86,6 +86,7 @@
 </div>
 
 @stop
+
 @section('page-script')
     <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
     <script src="{{ asset('assets/js/pages/ui/sweetalert.js') }}"></script>
@@ -97,10 +98,10 @@
     <script src="{{asset('assets/plugins/dropify/js/dropify.min.js')}}"></script>
     <script src="{{asset('assets/js/pages/forms/dropify.js')}}"></script>
     <script src="{{ asset('assets/js/courses/courses.js') }}"></script>
-@stop
+{{-- @stop --}}
 
-@section('page-script')
-<script>
+{{-- @section('page-script') --}}
+<script type="text/javascript">
 function deleteCourse(id) {
     swal({
             title: "¿Está seguro de eliminar el curso de la ruta de aprendizaje?",
@@ -162,4 +163,5 @@ $(function() {
     });
 });
 </script>
-@endsection
+@stop
+{{-- @endsection --}}

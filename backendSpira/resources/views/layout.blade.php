@@ -12,6 +12,9 @@
     <!-- <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}"> -->
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/floating-wpp.css') }}" />
 </head>
 
     @include('menu')
@@ -19,10 +22,11 @@
   
     <!-- Scripts -->
     @stack('before-scripts')
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <!-- <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> --}}
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/bundles/vendorscripts.bundle.js') }}"></script>
-    <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script> -->
+    <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/jquery/jquery-v3.3.1.min.js') }}"></script>
 
     @stack('after-scripts')
     @if (trim($__env->yieldContent('page-script')))

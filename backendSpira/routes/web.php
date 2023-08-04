@@ -38,7 +38,7 @@ Route::group([
     Route::post('register', 'App\Http\Controllers\AuthController@register');
 
     Route::get('/listCourse','App\Http\Controllers\CoursesController@getAllCourses')->name('courses.list');
-    Route::post('/n','App\Http\Controllers\CoursesController@storeCourse')->name('courses.store');
+    Route::post('/storeCourse','App\Http\Controllers\CoursesController@storeCourse')->name('courses.store');
     Route::get('/editCourse/{id}','App\Http\Controllers\CoursesController@editCourse')->name('courses.edit');
     Route::post('/updateCourse/{id}','App\Http\Controllers\CoursesController@updateCourse')->name('courses.update');
     Route::get('/delateCourse/{id}','App\Http\Controllers\CoursesController@delateCourse')->name('courses.delete');
@@ -48,3 +48,7 @@ Route::group([
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
